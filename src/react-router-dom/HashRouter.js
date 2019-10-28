@@ -26,10 +26,17 @@ export default class HashRouter extends React.Component{
     locationState=null;
 
     render(){
+        const that = this;
         let props = {
             location:this.state.location,
             history:{
                 push:(to,state)=>{
+                    if(that.getMessage){
+                        const allow = window.prompt(this.getMessage(that.props.location));
+                        if(!allow){
+                            return ;
+                        }
+                    }
                     if(typeof to === 'object'){
                         const {pathname,state} = to;
                         this.locationState = state;
@@ -37,6 +44,12 @@ export default class HashRouter extends React.Component{
                     } else {
                         window.location.hash=to;
                     }
+                },
+                block(message) {
+                    that.getMessage=message;
+                },
+                unblock() {
+                    that.getMessage=null;
                 }
             }
         }

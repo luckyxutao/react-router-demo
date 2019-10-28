@@ -5,6 +5,7 @@ import Redirect from './Redirect';
 import MenuLink from './MenuLink';
 import withRouter from './WithRouter';
 import Switch from './Switch';
+import Prompt from './Prompt';
 export {
     HashRouter,
     Route,
@@ -12,5 +13,6 @@ export {
     Redirect,
     Switch,
     MenuLink,
-    withRouter
+    withRouter,
+    Prompt
 }
