@@ -1,4 +1,5 @@
 import HashRouter from './HashRouter';
+import BrowserRouter from './BrowserRouter';
 import Route from './Route';
 import Link from './Link';
 import Redirect from './Redirect';
@@ -14,5 +15,6 @@ export {
     Switch,
     MenuLink,
     withRouter,
-    Prompt
+    Prompt,
+    BrowserRouter
 }

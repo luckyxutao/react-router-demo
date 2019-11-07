@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router, Route,Link,Redirect,Switch,MenuLink } from "./react-router-dom";
+import { HashRouter as Router, Route,Link,Redirect,Switch,MenuLink,BrowserRouter } from "./react-router-dom";
 import Home from './pages/Home';
 import User from './pages/User';
 import Protected from './pages/Protected';
@@ -9,7 +9,7 @@ import Login from './pages/Login';
 import NavHeader from './pages/NavHeader';
 import 'bootstrap/dist/css/bootstrap.css'
 ReactDOM.render(
-  <Router>
+  <BrowserRouter>
     <>
         <div className="navbar navbar-inverse">
             <div className="container-fluid">
@@ -31,7 +31,7 @@ ReactDOM.render(
             <Redirect to="/" ></Redirect>
         </Switch>
     </>
-  </Router>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
