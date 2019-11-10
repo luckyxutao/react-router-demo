@@ -1,6 +1,9 @@
 import React from "react";
 import Context from "./context";
 export default class Router extends React.Component {
+    static computeRootMatch(pathname) {
+        return { path: "/", url: "/", params: {}, isExact: pathname === "/" };
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +21,8 @@ export default class Router extends React.Component {
     render(){
         const props = {
             history:this.props.history,
-            location:this.state.location
+            location:this.state.location,
+            match: Router.computeRootMatch(this.state.location.pathname),
         }
         return (
             <Context.Provider value={props}>

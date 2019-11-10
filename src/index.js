@@ -7,9 +7,9 @@ const history = createHashHistory();
 ReactDOM.render(
 <Router history={history}>
     <Switch>
-        <Redirect to="/dashboard" from="/about" />
         <Route path="/about" component={About}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
+        <Redirect to="/dashboard" />
         <Route path="/" component={Home}></Route>
     </Switch>
 </Router>,
