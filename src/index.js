@@ -8,7 +8,7 @@ ReactDOM.render(
 <Router history={history}>
     <Switch>
         <Route path="/about" component={About}></Route>
-        <Route path="/dashboard" component={Dashboard}></Route>
+        <Route path="/dashboard/:city/:id" component={Dashboard}></Route>
         <Redirect to="/dashboard" />
         <Route path="/" component={Home}></Route>
     </Switch>

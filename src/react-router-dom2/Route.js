@@ -16,24 +16,32 @@ export default class Route extends React.Component {
       exact,path
     });
     const props = { ...this.context, match };
+    let result = null;
     if(props.match){
       if(children){
         if(typeof children === 'function'){
-          return children(props);
+          result=  children(props);
         } else {
-          return children;
+          result = children;
         }
       } else if(Component){
-        return <Component {...props} />;
+        result = <Component {...props} />;
       } else if(render){
-        return render(props);
+        result = render(props);
       } else {
-        return null;
+        result = null;
       }
     } else if(typeof children === 'function'){
-      return children(props);
+      result = children(props);
     } else {
-      return null;
+      result = null;
     }
+    return (
+      <RouterContext.Provider value={props}>
+      {
+        result
+      }
+    </RouterContext.Provider>
+    )
   }
 }
