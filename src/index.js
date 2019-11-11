@@ -15,3 +15,4 @@ ReactDOM.render(
 </Router>,
 document.getElementById("root")
 );
+//http://localhost:3000/#/dashboard/beijing/32?x=1&y=2
